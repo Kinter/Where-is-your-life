@@ -15,7 +15,7 @@ namespace Where_is_your_life
         HtmlDocument mydoc = new HtmlDocument();
         
         private string _tweets;
-        private string _follows;
+        private string _followings;
         private string _followers;
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace Where_is_your_life
         }
 
         public string Tweets { get => _tweets; set => _tweets = value; }
-        public string Follows { get => _follows; set => _follows = value; }
+        public string Followings { get => _followings; set => _followings = value; }
         public string Followers { get => _followers; set => _followers = value; }
 
 
@@ -46,11 +46,33 @@ namespace Where_is_your_life
             
             string html = new string('0', 1200);
             html = htmlDoc.ParsedText.ToString();
-            Regex reg = new Regex("start[0-9]*div");
+            // 정보들 숫자 가져옴.
+            Regex reg = new Regex("m\">[0-9,]*<");
             MatchCollection resultColl = reg.Matches(html);
 
-            //_tweets = html.Substring(index + 9, 6);
-            //_tweets = Int32.Parse(html.Substring(index + 9, 3));
+            // 숫자만 따로 뺌.
+            Regex regnum = new Regex("[0-9,]+");
+            foreach(Match mm in resultColl)
+            {
+                int i = 0;
+                MatchCollection resultCollNum = regnum.Matches(mm.ToString());
+                foreach (Match mmm in resultCollNum)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            _tweets = mmm.ToString();
+                            break;
+                        case 1:
+                            _followings = mmm.ToString();
+                            break;
+                        case 2:
+                            _followers = mmm.ToString();
+                            break;
+                    }
+                    i++;
+                }
+            }
             return true;
         }
     }
