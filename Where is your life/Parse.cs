@@ -10,6 +10,7 @@ namespace Where_is_your_life
     class Parse
     {
         private string _username;
+        private string _url;
         HtmlDocument mydoc = new HtmlDocument();
 
         /// <summary>
@@ -19,8 +20,13 @@ namespace Where_is_your_life
         Parse(string username)
         {
             _username = username;
+            _url = "https://twitter.com/" + _username;
         }
 
+        /// <summary>
+        /// Parse twitter data
+        /// </summary>
+        /// <returns>Success = true, Fail = false</returns>
         public bool parseData()
         {
 
