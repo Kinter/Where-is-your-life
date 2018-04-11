@@ -14,10 +14,6 @@ namespace Where_is_your_life
         private string _url;
         HtmlDocument mydoc = new HtmlDocument();
         
-        private string _tweets;
-        private string _followings;
-        private string _followers;
-
         /// <summary>
         /// 생성자임ㅋ
         /// </summary>
@@ -25,13 +21,13 @@ namespace Where_is_your_life
         public Parse(string username)
         {
             _username = username;
-
-            _url = @"https://twitter.com/" + _username+ @"?lang=en-gb";
+            
+            _url = $"https://twitter.com/{username}?lang=en-gb";
         }
 
-        public string Tweets { get => _tweets; set => _tweets = value; }
-        public string Followings { get => _followings; set => _followings = value; }
-        public string Followers { get => _followers; set => _followers = value; }
+        public string Tweets { get; private set; }
+        public string Followings { get; private set; }
+        public string Followers { get; private set; }
 
 
         /// <summary>
@@ -68,13 +64,15 @@ namespace Where_is_your_life
                     switch (i)
                     {
                         case 0:
-                            _tweets = mmm.ToString();
+                            Tweets = mmm.ToString();
                             break;
                         case 1:
-                            _followings = mmm.ToString();
+                            Followings = mmm.ToString();
                             break;
                         case 2:
-                            _followers = mmm.ToString();
+                            Followers = mmm.ToString();
+                            break;
+                        default:
                             break;
                     }
                     i++;

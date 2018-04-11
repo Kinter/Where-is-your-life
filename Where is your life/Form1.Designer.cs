@@ -72,9 +72,9 @@
             this.lTweets.AutoSize = true;
             this.lTweets.Location = new System.Drawing.Point(30, 65);
             this.lTweets.Name = "lTweets";
-            this.lTweets.Size = new System.Drawing.Size(50, 12);
+            this.lTweets.Size = new System.Drawing.Size(47, 12);
             this.lTweets.TabIndex = 3;
-            this.lTweets.Text = "lTweets";
+            this.lTweets.Text = "Tweets";
             // 
             // lFollowings
             // 

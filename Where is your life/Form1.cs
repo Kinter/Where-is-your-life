@@ -13,7 +13,6 @@ namespace Where_is_your_life
     public partial class Form1 : Form
     {
         Parse _p;
-        string _username;
 
         public Form1()
         {
@@ -27,22 +26,21 @@ namespace Where_is_your_life
 
         private void inputTextBox_TextChanged(object sender, EventArgs e)
         {
-            _username = textBoxInput.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _p = new Parse(_username);
+            _p = new Parse(textBoxInput.Text);
             _p.parseData();
 
-            textTweets.Text     = _p.Tweets;
-            textFollowers.Text  = _p.Followers;
+            textTweets.Text = _p.Tweets;
+            textFollowers.Text = _p.Followers;
             textFollowings.Text = _p.Followings;
         }
 
         private void textBoxInput_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) button1_Click(sender, new EventArgs());
+            if (e.KeyCode == Keys.Enter) button1_Click(null, null);
         }
         
     }
