@@ -28,6 +28,11 @@ namespace Where_is_your_life
             _url = @"https://twitter.com/" + _username+ @"?lang=en-gb";
         }
 
+        public int Tweets { get => _tweets; set => _tweets = value; }
+        public int Follows { get => _follows; set => _follows = value; }
+        public int Followers { get => _followers; set => _followers = value; }
+
+
         /// <summary>
         /// Parse twitter data
         /// </summary>
@@ -41,8 +46,9 @@ namespace Where_is_your_life
             string html = new string('0', 1200);
             html = htmlDoc.ParsedText.ToString();
             var index = html.IndexOf("statnum");
-
-            //Console.WriteLine(html.Substring(index+9, 15));
+            
+            _tweets = Int32.Parse(html.Substring(index + 9, 15));
+            Console.WriteLine(html.Substring(index+9, 15));
             return true;
         }
     }
