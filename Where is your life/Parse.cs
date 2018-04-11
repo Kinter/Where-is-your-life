@@ -21,7 +21,7 @@ namespace Where_is_your_life
         /// 생성자임ㅋ
         /// </summary>
         /// <param name="username">You can find user name twitter.com/"here"</param>
-        Parse(string username)
+        public Parse(string username)
         {
             _username = username;
             _url = @"https://twitter.com/" + _username+ @"?lang=en-gb";
