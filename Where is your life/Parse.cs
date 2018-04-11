@@ -12,6 +12,10 @@ namespace Where_is_your_life
         private string _username;
         private string _url;
         HtmlDocument mydoc = new HtmlDocument();
+        
+        private int _tweets;
+        private int _follows;
+        private int _followers;
 
         /// <summary>
         /// 생성자임ㅋ
@@ -20,7 +24,7 @@ namespace Where_is_your_life
         Parse(string username)
         {
             _username = username;
-            _url = "https://twitter.com/" + _username;
+            _url = @"https://twitter.com/" + _username+ @"?lang=en-gb";
         }
 
         /// <summary>
