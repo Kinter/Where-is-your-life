@@ -52,9 +52,12 @@ namespace Where_is_your_life
 
             // 숫자만 따로 뺌.
             Regex regnum = new Regex("[0-9,]+");
+
+            int i = 0;
+
             foreach(Match mm in resultColl)
             {
-                int i = 0;
+
                 MatchCollection resultCollNum = regnum.Matches(mm.ToString());
                 foreach (Match mmm in resultCollNum)
                 {
