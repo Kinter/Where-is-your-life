@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HtmlAgilityPack;
+using System.Windows.Forms;
+
 
 namespace Where_is_your_life
 {

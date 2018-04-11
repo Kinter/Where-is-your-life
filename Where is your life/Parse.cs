@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
+using System.Text.RegularExpressions;
 
 namespace Where_is_your_life
 {
@@ -13,9 +14,9 @@ namespace Where_is_your_life
         private string _url;
         HtmlDocument mydoc = new HtmlDocument();
         
-        private int _tweets;
-        private int _follows;
-        private int _followers;
+        private string _tweets;
+        private string _follows;
+        private string _followers;
 
         /// <summary>
         /// 생성자임ㅋ
@@ -28,9 +29,9 @@ namespace Where_is_your_life
             _url = @"https://twitter.com/" + _username+ @"?lang=en-gb";
         }
 
-        public int Tweets { get => _tweets; set => _tweets = value; }
-        public int Follows { get => _follows; set => _follows = value; }
-        public int Followers { get => _followers; set => _followers = value; }
+        public string Tweets { get => _tweets; set => _tweets = value; }
+        public string Follows { get => _follows; set => _follows = value; }
+        public string Followers { get => _followers; set => _followers = value; }
 
 
         /// <summary>
@@ -42,13 +43,14 @@ namespace Where_is_your_life
             HtmlWeb web = new HtmlWeb();
 
             var htmlDoc = web.Load(_url);
-
+            
             string html = new string('0', 1200);
             html = htmlDoc.ParsedText.ToString();
-            var index = html.IndexOf("statnum");
-            
-            _tweets = Int32.Parse(html.Substring(index + 9, 15));
-            Console.WriteLine(html.Substring(index+9, 15));
+            Regex reg = new Regex("start[0-9]*div");
+            MatchCollection resultColl = reg.Matches(html);
+
+            //_tweets = html.Substring(index + 9, 6);
+            //_tweets = Int32.Parse(html.Substring(index + 9, 3));
             return true;
         }
     }
