@@ -32,6 +32,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lTweets = new System.Windows.Forms.Label();
+            this.lFollowings = new System.Windows.Forms.Label();
+            this.lFollowers = new System.Windows.Forms.Label();
+            this.textTweets = new System.Windows.Forms.Label();
+            this.textFollowers = new System.Windows.Forms.Label();
+            this.textFollowings = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxInput
@@ -41,6 +46,7 @@
             this.textBoxInput.Size = new System.Drawing.Size(100, 21);
             this.textBoxInput.TabIndex = 0;
             this.textBoxInput.TextChanged += new System.EventHandler(this.inputTextBox_TextChanged);
+            this.textBoxInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxInput_KeyDown);
             // 
             // button1
             // 
@@ -64,17 +70,67 @@
             // lTweets
             // 
             this.lTweets.AutoSize = true;
-            this.lTweets.Location = new System.Drawing.Point(30, 69);
+            this.lTweets.Location = new System.Drawing.Point(30, 65);
             this.lTweets.Name = "lTweets";
             this.lTweets.Size = new System.Drawing.Size(50, 12);
             this.lTweets.TabIndex = 3;
             this.lTweets.Text = "lTweets";
+            // 
+            // lFollowings
+            // 
+            this.lFollowings.AutoSize = true;
+            this.lFollowings.Location = new System.Drawing.Point(30, 95);
+            this.lFollowings.Name = "lFollowings";
+            this.lFollowings.Size = new System.Drawing.Size(66, 12);
+            this.lFollowings.TabIndex = 4;
+            this.lFollowings.Text = "Followings";
+            // 
+            // lFollowers
+            // 
+            this.lFollowers.AutoSize = true;
+            this.lFollowers.Location = new System.Drawing.Point(30, 125);
+            this.lFollowers.Name = "lFollowers";
+            this.lFollowers.Size = new System.Drawing.Size(60, 12);
+            this.lFollowers.TabIndex = 5;
+            this.lFollowers.Text = "Followers";
+            // 
+            // textTweets
+            // 
+            this.textTweets.AutoSize = true;
+            this.textTweets.Location = new System.Drawing.Point(116, 65);
+            this.textTweets.Name = "textTweets";
+            this.textTweets.Size = new System.Drawing.Size(11, 12);
+            this.textTweets.TabIndex = 6;
+            this.textTweets.Text = "0";
+            // 
+            // textFollowers
+            // 
+            this.textFollowers.AutoSize = true;
+            this.textFollowers.Location = new System.Drawing.Point(116, 125);
+            this.textFollowers.Name = "textFollowers";
+            this.textFollowers.Size = new System.Drawing.Size(11, 12);
+            this.textFollowers.TabIndex = 7;
+            this.textFollowers.Text = "0";
+            // 
+            // textFollowings
+            // 
+            this.textFollowings.AutoSize = true;
+            this.textFollowings.Location = new System.Drawing.Point(116, 95);
+            this.textFollowings.Name = "textFollowings";
+            this.textFollowings.Size = new System.Drawing.Size(11, 12);
+            this.textFollowings.TabIndex = 8;
+            this.textFollowings.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(383, 305);
+            this.Controls.Add(this.textFollowings);
+            this.Controls.Add(this.textFollowers);
+            this.Controls.Add(this.textTweets);
+            this.Controls.Add(this.lFollowers);
+            this.Controls.Add(this.lFollowings);
             this.Controls.Add(this.lTweets);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -93,6 +149,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lTweets;
+        private System.Windows.Forms.Label lFollowings;
+        private System.Windows.Forms.Label lFollowers;
+        private System.Windows.Forms.Label textTweets;
+        private System.Windows.Forms.Label textFollowers;
+        private System.Windows.Forms.Label textFollowings;
     }
 }
 

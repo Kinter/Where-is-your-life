@@ -34,7 +34,16 @@ namespace Where_is_your_life
         {
             _p = new Parse(_username);
             _p.parseData();
-            lTweets.Text = _p.Tweets.ToString();
+
+            textTweets.Text     = _p.Tweets;
+            textFollowers.Text  = _p.Followers;
+            textFollowings.Text = _p.Followings;
         }
+
+        private void textBoxInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) button1_Click(sender, new EventArgs());
+        }
+        
     }
 }
