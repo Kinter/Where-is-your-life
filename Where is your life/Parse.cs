@@ -24,6 +24,7 @@ namespace Where_is_your_life
         public Parse(string username)
         {
             _username = username;
+
             _url = @"https://twitter.com/" + _username+ @"?lang=en-gb";
         }
 
@@ -33,7 +34,15 @@ namespace Where_is_your_life
         /// <returns>Success = true, Fail = false</returns>
         public bool parseData()
         {
+            HtmlWeb web = new HtmlWeb();
 
+            var htmlDoc = web.Load(_url);
+
+            string html = new string('0', 1200);
+            html = htmlDoc.ParsedText.ToString();
+            var index = html.IndexOf("statnum");
+
+            //Console.WriteLine(html.Substring(index+9, 15));
             return true;
         }
     }
