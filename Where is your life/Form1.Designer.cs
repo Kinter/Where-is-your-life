@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxInput = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lTweets = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxInput.Location = new System.Drawing.Point(12, 31);
+            this.textBoxInput.Name = "textBoxInput";
+            this.textBoxInput.Size = new System.Drawing.Size(100, 21);
+            this.textBoxInput.TabIndex = 0;
+            this.textBoxInput.TextChanged += new System.EventHandler(this.inputTextBox_TextChanged);
             // 
             // button1
             // 
@@ -60,14 +61,24 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Write your username";
             // 
+            // lTweets
+            // 
+            this.lTweets.AutoSize = true;
+            this.lTweets.Location = new System.Drawing.Point(30, 69);
+            this.lTweets.Name = "lTweets";
+            this.lTweets.Size = new System.Drawing.Size(50, 12);
+            this.lTweets.TabIndex = 3;
+            this.lTweets.Text = "lTweets";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(383, 305);
+            this.Controls.Add(this.lTweets);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxInput);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -78,9 +89,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxInput;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lTweets;
     }
 }
 

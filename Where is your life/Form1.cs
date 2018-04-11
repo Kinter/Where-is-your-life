@@ -25,14 +25,16 @@ namespace Where_is_your_life
             
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void inputTextBox_TextChanged(object sender, EventArgs e)
         {
-            _username = textBox1.Text;
+            _username = textBoxInput.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             _p = new Parse(_username);
+            _p.parseData();
+            lTweets.Text = _p.Tweets.ToString();
         }
     }
 }
