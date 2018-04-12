@@ -13,9 +13,14 @@ namespace Where_is_your_life
         JObject jObject;
         public JsonParse()
         {
-            if(File.Exists("ParseData.json"))
-            
-            jObject = new JObject();
+            if (File.Exists(System.Windows.Forms.Application.StartupPath + "ParseData.json"))
+            {
+
+            }
+            else
+            {
+                jObject = new JObject();
+            }
         }
         static public bool LoadData()
         {
