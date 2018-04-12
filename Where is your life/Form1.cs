@@ -12,7 +12,7 @@ namespace Where_is_your_life
 {
     public partial class Form1 : Form
     {
-        Parse _p;
+        HtmlParse _p;
 
         public Form1()
         {
@@ -30,7 +30,7 @@ namespace Where_is_your_life
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _p = new Parse(textBoxInput.Text);
+            _p = new HtmlParse(textBoxInput.Text);
             _p.parseData();
 
             textTweets.Text = _p.Tweets;

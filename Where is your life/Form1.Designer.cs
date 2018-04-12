@@ -125,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 305);
+            this.ClientSize = new System.Drawing.Size(322, 281);
             this.Controls.Add(this.textFollowings);
             this.Controls.Add(this.textFollowers);
             this.Controls.Add(this.textTweets);
@@ -136,7 +136,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxInput);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Where is your life?";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
