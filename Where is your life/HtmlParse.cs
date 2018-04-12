@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace Where_is_your_life
 {
-    class Parse
+    class HtmlParse
     {
         private string _username;
         private string _url;
@@ -18,7 +18,7 @@ namespace Where_is_your_life
         /// 생성자임ㅋ
         /// </summary>
         /// <param name="username">You can find user name twitter.com/"here"</param>
-        public Parse(string username)
+        public HtmlParse(string username)
         {
             _username = username;
             
@@ -57,10 +57,10 @@ namespace Where_is_your_life
                 // 잡것들 포함된 mm에서 숫자만 다시 뺌
                 MatchCollection resultCollNum = regnum.Matches(mm.ToString());
 
-                // 원소가 하나가 나올텐데 foreach 말고 뺄수 있는 방법이 있는지 모르겠음...
+                // 원소가 하나가 나올텐데 foreach 말고 뺄수 있는 방법이 있는지 모르겠음
                 foreach (Match mmm in resultCollNum)
                 {
-                    // 이 부분이 제일 문제임 뭔가 개선 가능할 거 같은데...
+                    // 이 부분이 제일 문제임 뭔가 개선 가능할 거 같은데
                     switch (i)
                     {
                         case 0:
