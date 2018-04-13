@@ -13,6 +13,7 @@ namespace Where_is_your_life
     public partial class Form1 : Form
     {
         HtmlParse _p;
+        JsonParse _j;
 
         public Form1()
         {
@@ -21,7 +22,8 @@ namespace Where_is_your_life
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("데이터를 불러옵니다.");
+            _j = new JsonParse();
         }
 
         private void inputTextBox_TextChanged(object sender, EventArgs e)

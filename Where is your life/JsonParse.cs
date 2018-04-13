@@ -9,11 +9,11 @@ namespace Where_is_your_life
         JObject jObject;
 
         public string Data { get; private set; }
-
+        public bool isLoaded { get; private set; }
 
         public JsonParse()
         {
-            
+            isLoaded = LoadData();
         }
 
         private static string LoadData(out bool error)
