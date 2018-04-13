@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{34367800-8BD9-4B9E-9D3C-9611A9659705}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Where_is_your_life</RootNamespace>
     <AssemblyName>Where is your life</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
