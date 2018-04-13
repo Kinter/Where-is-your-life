@@ -56,11 +56,9 @@ namespace Where_is_your_life
             {
                 // 잡것들 포함된 mm에서 숫자만 다시 뺌
                 MatchCollection resultCollNum = regnum.Matches(mm.ToString());
-
-                // 원소가 하나가 나올텐데 foreach 말고 뺄수 있는 방법이 있는지 모르겠음
+                
                 foreach (Match mmm in resultCollNum)
                 {
-                    // 이 부분이 제일 문제임 뭔가 개선 가능할 거 같은데
                     switch (i)
                     {
                         case 0:
