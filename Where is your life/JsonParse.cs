@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Windows.Forms;
+using Newtonsoft;
+using Newtonsoft.Json;
 
 namespace Where_is_your_life
 {
@@ -13,18 +15,20 @@ namespace Where_is_your_life
 
         public JsonParse()
         {
+            jsonData = new JObject();
             IsLoaded = LoadData();
         }
 
-        private static string LoadData(out bool error)
+        private static object LoadData(out bool error)
         {
             error = false;
             try
             {
-                if (File.Exists(Application.StartupPath + "ParseData.json"))
+                if (File.Exists(Application.StartupPath + @"\ParseData.json"))
                 {
                     // 파일이 존재하면 불러옴
-                    return File.ReadAllText(Application.StartupPath + @"\ParseData.json");
+
+                    return JObject.Parse(File.ReadAllText(Application.StartupPath + @"\ParseData.json"));
                 }
                 else
                 {
@@ -40,27 +44,27 @@ namespace Where_is_your_life
                 return "";
             }
         }
-        
+
         public void AddData(string username, int tweets, int followers, int followings)
         {
-            JObject tempObject = new JObject();
-            tempObject.Add("user", username);
+            JObject @object = new JObject(
+                new JProperty(System.DateTime.Now.ToString("yyMMddhhmm"),
+                new JObject(
+                    new JProperty("tweets", tweets),
+                    new JProperty("followers", followers),
+                    new JProperty("followings", followings))));
+            jsonData.Add(username, @object);
 
-            JObject addObject = new JObject();
-            
-            addObject.Add("tweets", tweets);
-            addObject.Add("followers", followers);
-            addObject.Add("followings", followings);
-
-            tempObject.Add(addObject);
-            jsonData.Add(System.DateTime.Now.ToString("yyyyMMddHHmm"));
+            File.WriteAllText(Application.StartupPath + @"\ParseData.json", jsonData.ToString());
         }
 
         private bool LoadData()
         {
             var data = LoadData(out var error);
             if (!error)
-                Data = data;
+                if (data.GetType().ToString() == "Newtonsoft.Json.Linq.JObject")
+                    jsonData = (JObject)data;
+
             return !error;
         }
     }
