@@ -22,7 +22,6 @@ namespace Where_is_your_life
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("데이터를 불러옵니다.");
             _j = new JsonParse();
         }
 
