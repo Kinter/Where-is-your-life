@@ -6,14 +6,14 @@ namespace Where_is_your_life
 {
     class JsonParse
     {
-        JObject jObject;
+        private JObject jsonData;
 
         public string Data { get; private set; }
-        public bool isLoaded { get; private set; }
+        public bool IsLoaded { get; private set; }
 
         public JsonParse()
         {
-            isLoaded = LoadData();
+            IsLoaded = LoadData();
         }
 
         private static string LoadData(out bool error)
@@ -23,12 +23,13 @@ namespace Where_is_your_life
             {
                 if (File.Exists(Application.StartupPath + "ParseData.json"))
                 {
+                    // 파일이 존재하면 불러옴
                     return File.ReadAllText(Application.StartupPath + @"\ParseData.json");
-
                 }
                 else
                 {
-                    File.WriteAllText(Application.StartupPath + @"\ParseData.json", "0");
+                    // 파일이 존재 안하면 자동 생성
+                    File.WriteAllText(Application.StartupPath + @"\ParseData.json", "");
                     return "";
                 }
             }
@@ -39,7 +40,21 @@ namespace Where_is_your_life
                 return "";
             }
         }
+        
+        public void AddData(string username, int tweets, int followers, int followings)
+        {
+            JObject tempObject = new JObject();
+            tempObject.Add("user", username);
 
+            JObject addObject = new JObject();
+            
+            addObject.Add("tweets", tweets);
+            addObject.Add("followers", followers);
+            addObject.Add("followings", followings);
+
+            tempObject.Add(addObject);
+            jsonData.Add(System.DateTime.Now.ToString("yyyyMMddHHmm"));
+        }
 
         private bool LoadData()
         {
