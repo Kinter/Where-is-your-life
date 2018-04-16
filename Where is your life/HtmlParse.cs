@@ -10,7 +10,6 @@ namespace Where_is_your_life
 {
     class HtmlParse
     {
-        private string _username;
         private string _url;
         HtmlDocument mydoc = new HtmlDocument();
         
@@ -20,11 +19,12 @@ namespace Where_is_your_life
         /// <param name="username">You can find user name twitter.com/"here"</param>
         public HtmlParse(string username)
         {
-            _username = username;
+            Username = username;
             
             _url = $"https://twitter.com/{username}?lang=en-gb";
         }
 
+        public string Username { get; private set; }
         public string Tweets { get; private set; }
         public string Followings { get; private set; }
         public string Followers { get; private set; }
@@ -34,7 +34,7 @@ namespace Where_is_your_life
         /// Parse twitter data
         /// </summary>
         /// <returns>Success = true, Fail = false</returns>
-        public bool parseData()
+        public bool ParseData()
         {
             HtmlWeb web = new HtmlWeb();
 
