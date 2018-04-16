@@ -48,14 +48,20 @@ namespace Where_is_your_life
         public void AddData(string username, int tweets, int followers, int followings)
         {
             JArray jArray = new JArray();
-            foreach(var fName in jsonData)
+            foreach (var fName in jsonData)
             {
-                if(fName.Key.ToString()==username)
+                if (fName.Key.ToString() == username)
                 {
                     jArray = JArray.Parse(fName.Value.ToString());
                 }
             }
-            jsonData[username]= jArray;
+            jArray.Add(new JObject(
+                new JProperty(System.DateTime.Now.ToString("yyMMddhhmm"), new JObject(
+                    new JProperty("tweets", tweets),
+                    new JProperty("followers", followers),
+                    new JProperty("followings", followings)))));
+            jsonData[username] = jArray;
+            System.Console.WriteLine(jArray);
 
             File.WriteAllText(Application.StartupPath + @"\ParseData.json", jsonData.ToString());
         }
