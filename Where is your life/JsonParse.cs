@@ -55,11 +55,14 @@ namespace Where_is_your_life
                     jArray = JArray.Parse(fName.Value.ToString());
                 }
             }
+
+        
             jArray.Add(new JObject(
                 new JProperty(System.DateTime.Now.ToString("yyMMddhhmm"), new JObject(
                     new JProperty("tweets", tweets),
                     new JProperty("followers", followers),
                     new JProperty("followings", followings)))));
+
             jsonData[username] = jArray;
             System.Console.WriteLine(jArray);
 

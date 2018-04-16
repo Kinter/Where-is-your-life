@@ -38,6 +38,13 @@ namespace Where_is_your_life
             textTweets.Text = _p.Tweets;
             textFollowers.Text = _p.Followers;
             textFollowings.Text = _p.Followings;
+
+            if (_p.Tweets == null || _p.Followers == null || _p.Followings == null)
+            {
+                MessageBox.Show("아이디가 제대로 입력되었는지 확인하여 주십시오.", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             _j.AddData(_p.Username,
                 int.Parse(_p.Tweets, System.Globalization.NumberStyles.AllowThousands),
                 int.Parse(_p.Followers, System.Globalization.NumberStyles.AllowThousands),
