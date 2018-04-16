@@ -39,6 +39,8 @@ namespace Where_is_your_life
             textTweets.Text = _p.Tweets;
             textFollowers.Text = _p.Followers;
             textFollowings.Text = _p.Followings;
+
+            _j.AddData(_p.Username, Convert.ToInt32(_p.Tweets), Convert.ToInt32(_p.Followers), Convert.ToInt32(_p.Followings));
         }
 
         private void textBoxInput_KeyDown(object sender, KeyEventArgs e)
