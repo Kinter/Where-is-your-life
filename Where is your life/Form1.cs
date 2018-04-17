@@ -45,14 +45,15 @@ namespace Where_is_your_life
                 return;
             }
 
-            if(_j.AddData(_p.Username,
+            if (!_j.AddData(_p.Username,
                 int.Parse(_p.Tweets, System.Globalization.NumberStyles.AllowThousands),
                 int.Parse(_p.Followers, System.Globalization.NumberStyles.AllowThousands),
                 int.Parse(_p.Followings, System.Globalization.NumberStyles.AllowThousands))
             )
             {
-                MessageBox.Show("데이터 추가 실패");
+                MessageBox.Show("데이터 추가 실패", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else MessageBox.Show("데이터 추가 성공","Notice", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void textBoxInput_KeyDown(object sender, KeyEventArgs e)
