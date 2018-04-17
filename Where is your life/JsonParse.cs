@@ -70,20 +70,23 @@ namespace Where_is_your_life
               new JProperty("followings", followings)))));
 
             jsonData[username] = jArray;
-            System.Console.WriteLine(jArray);
 
             File.WriteAllText(Application.StartupPath + @"\ParseData.json", jsonData.ToString());
 
             return true;
         }
-    
+
 
         private bool CheckData(JArray jArray)
         {
             // 중복 검사
             foreach (var fTime in jArray)
-                if (fTime.ToString() == System.DateTime.Now.ToString("yyMMddhhmm"))
+            {
+                System.Console.WriteLine(fTime.ToString());
+                System.Console.WriteLine(JObject.Parse(fTime.ToString()).ToString());
+                if (JObject.Parse(fTime.ToString()).ContainsKey(System.DateTime.Now.ToString("yyMMddhhmm")))
                     return false;
+            }
             return true;
         }
 
