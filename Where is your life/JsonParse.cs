@@ -45,7 +45,7 @@ namespace Where_is_your_life
             }
         }
 
-        public void AddData(string username, int tweets, int followers, int followings)
+        public bool AddData(string username, int tweets, int followers, int followings)
         {
             JArray jArray = new JArray();
             foreach (var fName in jsonData)
@@ -56,17 +56,35 @@ namespace Where_is_your_life
                 }
             }
 
-        
+            while (!CheckData(jArray))
+            {
+                var result = MessageBox.Show("Please wait a moment before trying.", "Error",
+                        MessageBoxButtons.RetryCancel, MessageBoxIcon.Asterisk);
+                if (result == DialogResult.Cancel) return false;
+            }
+
             jArray.Add(new JObject(
-                new JProperty(System.DateTime.Now.ToString("yyMMddhhmm"), new JObject(
-                    new JProperty("tweets", tweets),
-                    new JProperty("followers", followers),
-                    new JProperty("followings", followings)))));
+          new JProperty(System.DateTime.Now.ToString("yyMMddhhmm"), new JObject(
+              new JProperty("tweets", tweets),
+              new JProperty("followers", followers),
+              new JProperty("followings", followings)))));
 
             jsonData[username] = jArray;
             System.Console.WriteLine(jArray);
 
             File.WriteAllText(Application.StartupPath + @"\ParseData.json", jsonData.ToString());
+
+            return true;
+        }
+    
+
+        private bool CheckData(JArray jArray)
+        {
+            // 중복 검사
+            foreach (var fTime in jArray)
+                if (fTime.ToString() == System.DateTime.Now.ToString("yyMMddhhmm"))
+                    return false;
+            return true;
         }
 
         private bool LoadData()
