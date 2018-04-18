@@ -45,7 +45,6 @@
             this.textBoxInput.Name = "textBoxInput";
             this.textBoxInput.Size = new System.Drawing.Size(100, 21);
             this.textBoxInput.TabIndex = 0;
-            this.textBoxInput.TextChanged += new System.EventHandler(this.inputTextBox_TextChanged);
             this.textBoxInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxInput_KeyDown);
             // 
             // button1
@@ -63,9 +62,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 12);
+            this.label1.Size = new System.Drawing.Size(93, 12);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Write your username";
+            this.label1.Text = "Write username";
             // 
             // lTweets
             // 
