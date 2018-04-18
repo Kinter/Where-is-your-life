@@ -16,7 +16,17 @@ namespace Where_is_your_life
         public JsonParse()
         {
             jsonData = new JObject();
-            IsLoaded = LoadData();
+            IsLoaded = FirstLoadData();
+        }
+
+        private bool FirstLoadData()
+        {
+            var data = FirstLoadData(out var error);
+            if (!error)
+                if (data.GetType().ToString() == "Newtonsoft.Json.Linq.JObject")
+                    jsonData = (JObject)data;
+
+            return !error;
         }
 
         private static object FirstLoadData(out bool error)
@@ -45,6 +55,14 @@ namespace Where_is_your_life
             }
         }
 
+        /// <summary>
+        /// Json 파일에 사용자 데이터를 저장합니다.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="tweets"></param>
+        /// <param name="followers"></param>
+        /// <param name="followings"></param>
+        /// <returns>저장에 실패할시 false를 반환 합니다.</returns>
         public bool AddData(string username, int tweets, int followers, int followings)
         {
             JArray jArray = new JArray();
@@ -76,6 +94,11 @@ namespace Where_is_your_life
             return true;
         }
 
+        /// <summary>
+        /// 현재 파일에 추가하려는 데이터의 유효성을 검사하는 코드입니다.
+        /// </summary>
+        /// <param name="jArray"></param>
+        /// <returns> 현재 추가하려는 데이터가 유효하면 true를 반환합니다. </returns>
         private bool CheckData(JArray jArray)
         {
             // 중복 검사
@@ -88,15 +111,6 @@ namespace Where_is_your_life
             }
             return true;
         }
-
-        private bool LoadData()
-        {
-            var data = FirstLoadData(out var error);
-            if (!error)
-                if (data.GetType().ToString() == "Newtonsoft.Json.Linq.JObject")
-                    jsonData = (JObject)data;
-
-            return !error;
-        }
+        
     }
 }
