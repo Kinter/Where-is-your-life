@@ -23,6 +23,7 @@ namespace Where_is_your_life
         private void Form1_Load(object sender, EventArgs e)
         {
             _j = new JsonParse();
+            label2.Text= "인생이 트위터인 아주 위험한 상황입니다.\n 이곳을 눌러 빨리 구원받으세요.";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,6 +56,10 @@ namespace Where_is_your_life
         {
             if (e.KeyCode == Keys.Enter) button1_Click(null, null);
         }
-        
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://kr.battle.net/heroes/ko");
+        }
     }
 }
