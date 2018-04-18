@@ -19,7 +19,7 @@ namespace Where_is_your_life
             IsLoaded = LoadData();
         }
 
-        private static object LoadData(out bool error)
+        private static object FirstLoadData(out bool error)
         {
             error = false;
             try
@@ -76,7 +76,6 @@ namespace Where_is_your_life
             return true;
         }
 
-
         private bool CheckData(JArray jArray)
         {
             // 중복 검사
@@ -92,7 +91,7 @@ namespace Where_is_your_life
 
         private bool LoadData()
         {
-            var data = LoadData(out var error);
+            var data = FirstLoadData(out var error);
             if (!error)
                 if (data.GetType().ToString() == "Newtonsoft.Json.Linq.JObject")
                     jsonData = (JObject)data;
