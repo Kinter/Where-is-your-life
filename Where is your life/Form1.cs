@@ -22,6 +22,11 @@ namespace Where_is_your_life
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            timer1 = new Timer();
+            timer1.Interval = 300;
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Start();
+
             _j = new JsonParse();
             label2.Text= "인생이 트위터인 아주 위험한 상황입니다.\n 이곳을 눌러 빨리 구원받으세요.";
         }
@@ -60,6 +65,13 @@ namespace Where_is_your_life
         private void label2_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://kr.battle.net/heroes/ko");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label2.Visible = !label2.Visible;
+            timer1.Stop();
+            timer1.Start();
         }
     }
 }
