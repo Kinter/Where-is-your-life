@@ -23,12 +23,14 @@ namespace Where_is_your_life
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1 = new Timer();
-            timer1.Interval = 300;
+            timer1.Interval = 600;
             timer1.Tick += new EventHandler(timer1_Tick);
             timer1.Start();
 
             _j = new JsonParse();
             label2.Text= "인생이 트위터인 아주 위험한 상황입니다.\n 이곳을 눌러 빨리 구원받으세요.";
+
+            _j.CountData("adnim_");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,7 +56,20 @@ namespace Where_is_your_life
             {
                 MessageBox.Show("데이터 추가 실패", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else MessageBox.Show("데이터 추가 성공","Notice", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            else
+            {
+                MessageBox.Show("데이터 추가 성공", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                Tap2Load();
+            }
+        }
+
+        private void Tap2Load()
+        {
+            ListViewItem listViewItem = new ListViewItem();
+            listViewItem.SubItems.Add("1");
+            listViewItem.SubItems.Add("2");
+            listView1.Items.Add(listViewItem);
+            
         }
 
         private void textBoxInput_KeyDown(object sender, KeyEventArgs e)

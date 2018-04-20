@@ -112,5 +112,21 @@ namespace Where_is_your_life
             return true;
         }
         
+        /// <summary>
+        /// Get length of the data of username
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        public int CountData(string username)
+        {
+            JArray items = (JArray)jsonData[username];
+
+            return items.Count;
+        }
+
+        public (int, int, int, int)[] GetData(string username)
+        {
+            int
+        }
     }
 }
