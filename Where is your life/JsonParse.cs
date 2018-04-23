@@ -54,9 +54,7 @@ namespace Where_is_your_life
             }
             
             catch(JsonReaderException ex)
-            {
-                MessageBox.Show(ex.Message+"\nParseData.json을 삭제하고 다시 시도해 보세요.");
-                
+            {   
                 error = true;
                 return "";
             }
@@ -136,8 +134,9 @@ namespace Where_is_your_life
             int date, tweets, followings, followers;
 
             var a = new(int, int, int, int)[count];
+            JArray items = (JArray)jsonData[username];
 
-            for(int i=0;i<count;i++)
+            foreach(var @object in items)
             {
 
             }
