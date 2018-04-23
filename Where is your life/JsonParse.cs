@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.IO;
 using System.Windows.Forms;
-using Newtonsoft;
-using Newtonsoft.Json;
 
 namespace Where_is_your_life
 {
@@ -40,11 +40,8 @@ namespace Where_is_your_life
 
                     return JObject.Parse(File.ReadAllText(Application.StartupPath + @"\ParseData.json"));
                 }
-
                 else
                 {
-                    // 파일이 존재 안하면 자동 생성
-                    File.WriteAllText(Application.StartupPath + @"\ParseData.json", "");
                     return "";
                 }
             
@@ -55,7 +52,7 @@ namespace Where_is_your_life
                 error = true;
                 return "";
             }
-           
+            
             catch(JsonReaderException ex)
             {
                 MessageBox.Show(ex.Message+"\nParseData.json을 삭제하고 다시 시도해 보세요.");
@@ -90,16 +87,17 @@ namespace Where_is_your_life
                         MessageBoxButtons.RetryCancel, MessageBoxIcon.Asterisk);
                 if (result == DialogResult.Cancel) return false;
             }
-            
+
             jArray.Add(new JObject(
-          new JProperty(System.DateTime.Now.ToString("yyMMddhhmm"), new JObject(
+              new JProperty("date", Convert.ToInt32(System.DateTime.Now.ToString("yyMMddhhmm"))),
               new JProperty("tweets", tweets),
               new JProperty("followers", followers),
-              new JProperty("followings", followings)))));
+              new JProperty("followings", followings)));
 
             jsonData[username] = jArray;
 
             File.WriteAllText(Application.StartupPath + @"\ParseData.json", jsonData.ToString());
+            System.Console.WriteLine(JObject.Parse(File.ReadAllText(Application.StartupPath + @"\ParseData.json")));
 
             return true;
         }
@@ -114,8 +112,6 @@ namespace Where_is_your_life
             // 중복 검사
             foreach (var fTime in jArray)
             {
-                System.Console.WriteLine(fTime.ToString());
-                System.Console.WriteLine(JObject.Parse(fTime.ToString()).ToString());
                 if (JObject.Parse(fTime.ToString()).ContainsKey(System.DateTime.Now.ToString("yyMMddhhmm")))
                     return false;
             }
@@ -134,11 +130,20 @@ namespace Where_is_your_life
             return items.Count;
         }
 
-        //public (int, int, int, int)[] GetData(string username)
-        //{
-        //    int date, tweets, followings, followers;
-        //    jsonData[username]
-        //    return (date, tweets, followings, followers);
-        //}
+        public (int, int, int, int)[] GetData(string username)
+        {
+            int count = CountData(username);
+            int date, tweets, followings, followers;
+
+            var a = new(int, int, int, int)[count];
+
+            for(int i=0;i<count;i++)
+            {
+
+            }
+            
+
+            return a;
+        }
     }
 }
