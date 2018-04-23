@@ -40,16 +40,26 @@ namespace Where_is_your_life
 
                     return JObject.Parse(File.ReadAllText(Application.StartupPath + @"\ParseData.json"));
                 }
+
                 else
                 {
                     // 파일이 존재 안하면 자동 생성
                     File.WriteAllText(Application.StartupPath + @"\ParseData.json", "");
                     return "";
                 }
+            
             }
             catch (IOException ex)
             {
                 MessageBox.Show(ex.Message);
+                error = true;
+                return "";
+            }
+           
+            catch(JsonReaderException ex)
+            {
+                MessageBox.Show(ex.Message+"\nParseData.json을 삭제하고 다시 시도해 보세요.");
+                
                 error = true;
                 return "";
             }
@@ -80,7 +90,7 @@ namespace Where_is_your_life
                         MessageBoxButtons.RetryCancel, MessageBoxIcon.Asterisk);
                 if (result == DialogResult.Cancel) return false;
             }
-
+            
             jArray.Add(new JObject(
           new JProperty(System.DateTime.Now.ToString("yyMMddhhmm"), new JObject(
               new JProperty("tweets", tweets),
@@ -124,9 +134,11 @@ namespace Where_is_your_life
             return items.Count;
         }
 
-        public (int, int, int, int)[] GetData(string username)
-        {
-            int
-        }
+        //public (int, int, int, int)[] GetData(string username)
+        //{
+        //    int date, tweets, followings, followers;
+        //    jsonData[username]
+        //    return (date, tweets, followings, followers);
+        //}
     }
 }
