@@ -52,29 +52,26 @@ namespace Where_is_your_life
             int i = 0;
 
             // 잡것들 포함된거 빼온다.
-            foreach(Match mm in resultColl)
+            foreach (Match mm in resultColl)
             {
                 // 잡것들 포함된 mm에서 숫자만 다시 뺌
-                MatchCollection resultCollNum = regnum.Matches(mm.ToString());
-                
-                foreach (Match mmm in resultCollNum)
+                Match resultCollNum = regnum.Match(mm.ToString());
+
+                switch (i)
                 {
-                    switch (i)
-                    {
-                        case 0:
-                            Tweets = mmm.ToString();
-                            break;
-                        case 1:
-                            Followings = mmm.ToString();
-                            break;
-                        case 2:
-                            Followers = mmm.ToString();
-                            break;
-                        default:
-                            break;
-                    }
-                    i++;
+                    case 0:
+                        Tweets = resultCollNum.ToString();
+                        break;
+                    case 1:
+                        Followings = resultCollNum.ToString();
+                        break;
+                    case 2:
+                        Followers = resultCollNum.ToString();
+                        break;
+                    default:
+                        break;
                 }
+                i++;
             }
             return true;
         }
