@@ -60,8 +60,8 @@ namespace Where_is_your_life
             (int, int, int, int)[] data = _j.GetData(username);
             foreach (var a in data)
             {
-                listBox1.Items.Add(a.Item1);
-                listBox2.Items.Add(a.Item1);
+                listBox1.Items.Add(FormattingDate(a.Item1.ToString()));
+                listBox2.Items.Add(FormattingDate(a.Item1.ToString()));
             }
         }
 
@@ -84,13 +84,13 @@ namespace Where_is_your_life
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            labelonListBox1.Text = FormattingDate(listBox1.SelectedItem.ToString());
+            labelonListBox1.Text = listBox1.SelectedItem.ToString();
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            labelonListBox2.Text = FormattingDate(listBox2.SelectedItem.ToString());
+            labelonListBox2.Text = listBox2.SelectedItem.ToString();
         }
 
         private string FormattingDate(string date)

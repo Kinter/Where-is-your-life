@@ -48,6 +48,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.labelonListBox1 = new System.Windows.Forms.Label();
             this.labelonListBox2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -174,6 +176,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.labelonListBox2);
             this.tabPage2.Controls.Add(this.labelonListBox1);
             this.tabPage2.Controls.Add(this.label3);
@@ -197,7 +201,7 @@
             this.listBox1.ItemHeight = 12;
             this.listBox1.Location = new System.Drawing.Point(29, 36);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(115, 160);
+            this.listBox1.Size = new System.Drawing.Size(170, 160);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -205,9 +209,9 @@
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 12;
-            this.listBox2.Location = new System.Drawing.Point(190, 36);
+            this.listBox2.Location = new System.Drawing.Point(251, 36);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(115, 160);
+            this.listBox2.Size = new System.Drawing.Size(170, 160);
             this.listBox2.TabIndex = 1;
             this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
@@ -215,7 +219,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(150, 98);
+            this.label3.Location = new System.Drawing.Point(205, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 21);
             this.label3.TabIndex = 2;
@@ -224,20 +228,42 @@
             // labelonListBox1
             // 
             this.labelonListBox1.AutoSize = true;
-            this.labelonListBox1.Location = new System.Drawing.Point(53, 15);
+            this.labelonListBox1.Font = new System.Drawing.Font("굴림", 10F);
+            this.labelonListBox1.Location = new System.Drawing.Point(26, 17);
             this.labelonListBox1.Name = "labelonListBox1";
-            this.labelonListBox1.Size = new System.Drawing.Size(38, 12);
+            this.labelonListBox1.Size = new System.Drawing.Size(35, 14);
             this.labelonListBox1.TabIndex = 3;
-            this.labelonListBox1.Text = "label4";
+            this.labelonListBox1.Text = "날짜";
             // 
             // labelonListBox2
             // 
             this.labelonListBox2.AutoSize = true;
-            this.labelonListBox2.Location = new System.Drawing.Point(215, 15);
+            this.labelonListBox2.Font = new System.Drawing.Font("굴림", 10F);
+            this.labelonListBox2.Location = new System.Drawing.Point(248, 17);
             this.labelonListBox2.Name = "labelonListBox2";
-            this.labelonListBox2.Size = new System.Drawing.Size(38, 12);
+            this.labelonListBox2.Size = new System.Drawing.Size(35, 14);
             this.labelonListBox2.TabIndex = 4;
-            this.labelonListBox2.Text = "label5";
+            this.labelonListBox2.Text = "날짜";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(198, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 23);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "부터";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(423, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 23);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "까지";
             // 
             // Form1
             // 
@@ -282,6 +308,8 @@
         private System.Windows.Forms.Label labelonListBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
 
