@@ -141,7 +141,6 @@ namespace Where_is_your_life
                 a[i] = ((int)@object["date"], (int)@object["tweets"], (int)@object["followings"], (int)@object["followers"]);
                 i++;
             }
-            
 
             return a;
         }
