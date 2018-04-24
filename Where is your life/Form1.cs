@@ -89,7 +89,6 @@ namespace Where_is_your_life
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             labelonListBox2.Text = listBox2.SelectedItem.ToString();
         }
 
