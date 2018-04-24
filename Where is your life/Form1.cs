@@ -84,12 +84,23 @@ namespace Where_is_your_life
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            labelonListBox1.Text = listBox1.SelectedItem.ToString();
+            labelonListBox1.Text = FormattingDate(listBox1.SelectedItem.ToString());
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            labelonListBox2.Text = listBox2.SelectedItem.ToString();
+            
+            labelonListBox2.Text = FormattingDate(listBox2.SelectedItem.ToString());
+        }
+
+        private string FormattingDate(string date)
+        {
+            date = date.Insert(2, "년 ");
+            date = date.Insert(6, "월 ");
+            date = date.Insert(10, "일 ");
+            date = date.Insert(14, "시 ");
+            date = date.Insert(18, "분 ");
+            return date;
         }
     }
 }
