@@ -110,7 +110,7 @@ namespace Where_is_your_life
             // 중복 검사
             foreach (var fTime in jArray)
             {
-                if (JObject.Parse(fTime.ToString()).ContainsKey(System.DateTime.Now.ToString("yyMMddhhmm")))
+                if (fTime["date"].ToString() == System.DateTime.Now.ToString("yyMMddhhmm")) 
                     return false;
             }
             return true;
@@ -131,14 +131,15 @@ namespace Where_is_your_life
         public (int, int, int, int)[] GetData(string username)
         {
             int count = CountData(username);
-            int date, tweets, followings, followers;
 
-            var a = new(int, int, int, int)[count];
+            var a = new (int, int, int, int)[count];
             JArray items = (JArray)jsonData[username];
 
+            int i = 0;
             foreach(var @object in items)
             {
-
+                a[i] = ((int)@object["date"], (int)@object["tweets"], (int)@object["followings"], (int)@object["followers"]);
+                i++;
             }
             
 

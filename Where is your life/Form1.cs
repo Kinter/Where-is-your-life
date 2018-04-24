@@ -22,7 +22,7 @@ namespace Where_is_your_life
 
             _j = new JsonParse();
             label2.Text= "인생이 트위터인 아주 위험한 상황입니다.\n 이곳을 눌러 빨리 구원받으세요.";
-            
+            _j.GetData("adnim_");
         }
 
         private void button1_Click(object sender, EventArgs e)
