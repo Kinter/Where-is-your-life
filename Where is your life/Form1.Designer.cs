@@ -43,8 +43,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelonListBox1 = new System.Windows.Forms.Label();
+            this.labelonListBox2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxInput
@@ -168,6 +174,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.labelonListBox2);
+            this.tabPage2.Controls.Add(this.labelonListBox1);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.listBox2);
+            this.tabPage2.Controls.Add(this.listBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -179,6 +190,54 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(29, 36);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(115, 160);
+            this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 12;
+            this.listBox2.Location = new System.Drawing.Point(190, 36);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(115, 160);
+            this.listBox2.TabIndex = 1;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(150, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 21);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "To";
+            // 
+            // labelonListBox1
+            // 
+            this.labelonListBox1.AutoSize = true;
+            this.labelonListBox1.Location = new System.Drawing.Point(53, 15);
+            this.labelonListBox1.Name = "labelonListBox1";
+            this.labelonListBox1.Size = new System.Drawing.Size(38, 12);
+            this.labelonListBox1.TabIndex = 3;
+            this.labelonListBox1.Text = "label4";
+            // 
+            // labelonListBox2
+            // 
+            this.labelonListBox2.AutoSize = true;
+            this.labelonListBox2.Location = new System.Drawing.Point(215, 15);
+            this.labelonListBox2.Name = "labelonListBox2";
+            this.labelonListBox2.Size = new System.Drawing.Size(38, 12);
+            this.labelonListBox2.TabIndex = 4;
+            this.labelonListBox2.Text = "label5";
             // 
             // Form1
             // 
@@ -195,6 +254,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,6 +277,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label labelonListBox2;
+        private System.Windows.Forms.Label labelonListBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }
 

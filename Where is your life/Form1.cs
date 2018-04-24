@@ -51,11 +51,19 @@ namespace Where_is_your_life
             else
             {
                 MessageBox.Show("데이터 추가 성공", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                Tap2Load(textBoxInput.Text);
+                ListLoad(textBoxInput.Text);
             }
         }
 
-        
+        void ListLoad(string username)
+        {
+            (int, int, int, int)[] data = _j.GetData(username);
+            foreach (var a in data)
+            {
+                listBox1.Items.Add(a.Item1);
+                listBox2.Items.Add(a.Item1);
+            }
+        }
 
         private void textBoxInput_KeyDown(object sender, KeyEventArgs e)
         {
@@ -73,6 +81,15 @@ namespace Where_is_your_life
             timer1.Stop();
             timer1.Start();
         }
-        
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            labelonListBox1.Text = listBox1.SelectedItem.ToString();
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            labelonListBox2.Text = listBox2.SelectedItem.ToString();
+        }
     }
 }
