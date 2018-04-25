@@ -92,6 +92,11 @@ namespace Where_is_your_life
             labelonListBox2.Text = listBox2.SelectedItem.ToString();
         }
 
+        /// <summary>
+        /// yyMMddhhss -> yy년 MM월 dd일 hh시 ss분으로 변환합니다.
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
         private string FormattingDate(string date)
         {
             date = date.Insert(2, "년 ");
