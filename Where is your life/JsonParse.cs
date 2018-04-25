@@ -44,7 +44,7 @@ namespace Where_is_your_life
                 {
                     return "";
                 }
-            
+
             }
             catch (IOException ex)
             {
@@ -52,9 +52,9 @@ namespace Where_is_your_life
                 error = true;
                 return "";
             }
-            
-            catch(JsonReaderException ex)
-            {   
+
+            catch (JsonReaderException ex)
+            {
                 error = true;
                 return "";
             }
@@ -110,12 +110,12 @@ namespace Where_is_your_life
             // 중복 검사
             foreach (var fTime in jArray)
             {
-                if (fTime["date"].ToString() == System.DateTime.Now.ToString("yyMMddhhmm")) 
+                if (fTime["date"].ToString() == System.DateTime.Now.ToString("yyMMddhhmm"))
                     return false;
             }
             return true;
         }
-        
+
         /// <summary>
         /// Get length of the data of username
         /// </summary>
@@ -132,17 +132,31 @@ namespace Where_is_your_life
         {
             int count = CountData(username);
 
-            var a = new (int, int, int, int)[count];
+            var a = new(int, int, int, int)[count];
             JArray items = (JArray)jsonData[username];
 
             int i = 0;
-            foreach(var @object in items)
+            foreach (var @object in items)
             {
                 a[i] = ((int)@object["date"], (int)@object["tweets"], (int)@object["followings"], (int)@object["followers"]);
                 i++;
             }
-
             return a;
+        }
+
+        public (int, int, int) GetData(string username, int date)
+        {
+            (int, int, int, int)[] a = GetData(username);
+
+            foreach (var i in a)
+            {
+                if (i.Item1 == date)
+                {
+                    return (i.Item2, i.Item3, i.Item4);
+                }
+            }
+
+            return (0, 0, 0);
         }
     }
 }

@@ -42,20 +42,20 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.labelonListBox1 = new System.Windows.Forms.Label();
-            this.labelonListBox2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.labelCTweets = new System.Windows.Forms.Label();
-            this.labelhmt = new System.Windows.Forms.Label();
-            this.labelhmfr = new System.Windows.Forms.Label();
-            this.labelCFers = new System.Windows.Forms.Label();
-            this.labelhmfw = new System.Windows.Forms.Label();
             this.labelCFings = new System.Windows.Forms.Label();
+            this.labelhmfw = new System.Windows.Forms.Label();
+            this.labelCFers = new System.Windows.Forms.Label();
+            this.labelhmfr = new System.Windows.Forms.Label();
+            this.labelhmt = new System.Windows.Forms.Label();
+            this.labelCTweets = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelonListBox2 = new System.Windows.Forms.Label();
+            this.labelonListBox1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -149,7 +149,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 31);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(593, 238);
+            this.tabControl1.Size = new System.Drawing.Size(593, 284);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
@@ -198,74 +198,70 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(585, 212);
+            this.tabPage2.Size = new System.Drawing.Size(585, 258);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "과거 열람";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // timer1
+            // labelCFings
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.labelCFings.AutoSize = true;
+            this.labelCFings.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelCFings.Location = new System.Drawing.Point(518, 98);
+            this.labelCFings.Name = "labelCFings";
+            this.labelCFings.Size = new System.Drawing.Size(59, 15);
+            this.labelCFings.TabIndex = 12;
+            this.labelCFings.Text = "로딩 안됨";
             // 
-            // listBox1
+            // labelhmfw
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(29, 36);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(170, 160);
-            this.listBox1.TabIndex = 0;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.labelhmfw.AutoSize = true;
+            this.labelhmfw.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelhmfw.Location = new System.Drawing.Point(423, 98);
+            this.labelhmfw.Name = "labelhmfw";
+            this.labelhmfw.Size = new System.Drawing.Size(91, 15);
+            this.labelhmfw.TabIndex = 11;
+            this.labelhmfw.Text = "새 팔로잉 수  : ";
             // 
-            // listBox2
+            // labelCFers
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 12;
-            this.listBox2.Location = new System.Drawing.Point(251, 36);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(170, 160);
-            this.listBox2.TabIndex = 1;
-            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            this.labelCFers.AutoSize = true;
+            this.labelCFers.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelCFers.Location = new System.Drawing.Point(518, 73);
+            this.labelCFers.Name = "labelCFers";
+            this.labelCFers.Size = new System.Drawing.Size(59, 15);
+            this.labelCFers.TabIndex = 10;
+            this.labelCFers.Text = "로딩 안됨";
             // 
-            // label3
+            // labelhmfr
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(205, 90);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "To";
+            this.labelhmfr.AutoSize = true;
+            this.labelhmfr.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelhmfr.Location = new System.Drawing.Point(423, 73);
+            this.labelhmfr.Name = "labelhmfr";
+            this.labelhmfr.Size = new System.Drawing.Size(91, 15);
+            this.labelhmfr.TabIndex = 9;
+            this.labelhmfr.Text = "새 팔로워 수  : ";
             // 
-            // labelonListBox1
+            // labelhmt
             // 
-            this.labelonListBox1.AutoSize = true;
-            this.labelonListBox1.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelonListBox1.Location = new System.Drawing.Point(26, 17);
-            this.labelonListBox1.Name = "labelonListBox1";
-            this.labelonListBox1.Size = new System.Drawing.Size(31, 14);
-            this.labelonListBox1.TabIndex = 3;
-            this.labelonListBox1.Text = "날짜";
+            this.labelhmt.AutoSize = true;
+            this.labelhmt.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelhmt.Location = new System.Drawing.Point(427, 48);
+            this.labelhmt.Name = "labelhmt";
+            this.labelhmt.Size = new System.Drawing.Size(87, 15);
+            this.labelhmt.TabIndex = 8;
+            this.labelhmt.Text = "트윗 수        : ";
             // 
-            // labelonListBox2
+            // labelCTweets
             // 
-            this.labelonListBox2.AutoSize = true;
-            this.labelonListBox2.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelonListBox2.Location = new System.Drawing.Point(248, 17);
-            this.labelonListBox2.Name = "labelonListBox2";
-            this.labelonListBox2.Size = new System.Drawing.Size(31, 14);
-            this.labelonListBox2.TabIndex = 4;
-            this.labelonListBox2.Text = "날짜";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(198, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 23);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "부터";
+            this.labelCTweets.AutoSize = true;
+            this.labelCTweets.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelCTweets.Location = new System.Drawing.Point(518, 48);
+            this.labelCTweets.Name = "labelCTweets";
+            this.labelCTweets.Size = new System.Drawing.Size(59, 15);
+            this.labelCTweets.TabIndex = 7;
+            this.labelCTweets.Text = "로딩 안됨";
             // 
             // label5
             // 
@@ -277,65 +273,69 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "까지";
             // 
-            // labelCTweets
+            // label4
             // 
-            this.labelCTweets.AutoSize = true;
-            this.labelCTweets.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelCTweets.Location = new System.Drawing.Point(518, 60);
-            this.labelCTweets.Name = "labelCTweets";
-            this.labelCTweets.Size = new System.Drawing.Size(59, 15);
-            this.labelCTweets.TabIndex = 7;
-            this.labelCTweets.Text = "로딩 안됨";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(198, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 23);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "부터";
             // 
-            // labelhmt
+            // labelonListBox2
             // 
-            this.labelhmt.AutoSize = true;
-            this.labelhmt.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelhmt.Location = new System.Drawing.Point(427, 60);
-            this.labelhmt.Name = "labelhmt";
-            this.labelhmt.Size = new System.Drawing.Size(87, 15);
-            this.labelhmt.TabIndex = 8;
-            this.labelhmt.Text = "트윗 수        : ";
+            this.labelonListBox2.AutoSize = true;
+            this.labelonListBox2.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelonListBox2.Location = new System.Drawing.Point(248, 17);
+            this.labelonListBox2.Name = "labelonListBox2";
+            this.labelonListBox2.Size = new System.Drawing.Size(31, 14);
+            this.labelonListBox2.TabIndex = 4;
+            this.labelonListBox2.Text = "날짜";
             // 
-            // labelhmfr
+            // labelonListBox1
             // 
-            this.labelhmfr.AutoSize = true;
-            this.labelhmfr.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelhmfr.Location = new System.Drawing.Point(423, 85);
-            this.labelhmfr.Name = "labelhmfr";
-            this.labelhmfr.Size = new System.Drawing.Size(91, 15);
-            this.labelhmfr.TabIndex = 9;
-            this.labelhmfr.Text = "새 팔로워 수  : ";
+            this.labelonListBox1.AutoSize = true;
+            this.labelonListBox1.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelonListBox1.Location = new System.Drawing.Point(26, 17);
+            this.labelonListBox1.Name = "labelonListBox1";
+            this.labelonListBox1.Size = new System.Drawing.Size(31, 14);
+            this.labelonListBox1.TabIndex = 3;
+            this.labelonListBox1.Text = "날짜";
             // 
-            // labelCFers
+            // label3
             // 
-            this.labelCFers.AutoSize = true;
-            this.labelCFers.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelCFers.Location = new System.Drawing.Point(518, 85);
-            this.labelCFers.Name = "labelCFers";
-            this.labelCFers.Size = new System.Drawing.Size(59, 15);
-            this.labelCFers.TabIndex = 10;
-            this.labelCFers.Text = "로딩 안됨";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(205, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 21);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "To";
             // 
-            // labelhmfw
+            // listBox2
             // 
-            this.labelhmfw.AutoSize = true;
-            this.labelhmfw.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelhmfw.Location = new System.Drawing.Point(423, 110);
-            this.labelhmfw.Name = "labelhmfw";
-            this.labelhmfw.Size = new System.Drawing.Size(91, 15);
-            this.labelhmfw.TabIndex = 11;
-            this.labelhmfw.Text = "새 팔로잉 수  : ";
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 12;
+            this.listBox2.Location = new System.Drawing.Point(251, 36);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(170, 88);
+            this.listBox2.TabIndex = 1;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
-            // labelCFings
+            // listBox1
             // 
-            this.labelCFings.AutoSize = true;
-            this.labelCFings.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelCFings.Location = new System.Drawing.Point(518, 110);
-            this.labelCFings.Name = "labelCFings";
-            this.labelCFings.Size = new System.Drawing.Size(59, 15);
-            this.labelCFings.TabIndex = 12;
-            this.labelCFings.Text = "로딩 안됨";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(29, 36);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(170, 88);
+            this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
