@@ -7,6 +7,8 @@ namespace Where_is_your_life
     {
         HtmlParse _p;
         JsonParse _j;
+        (int date, int tweets, int followers, int followings)[] _nowUserdata;
+        string username;
 
         public Form1()
         {
@@ -19,16 +21,17 @@ namespace Where_is_your_life
             timer1.Interval = 600;
             timer1.Tick += new EventHandler(timer1_Tick);
             timer1.Start();
-            
+
 
             _j = new JsonParse();
-            label2.Text= "인생이 트위터인 아주 위험한 상황입니다.\n 이곳을 눌러 빨리 구원받으세요.";
-            _j.GetData("adnim_");
+            label2.Text = "인생이 트위터인 아주 위험한 상황입니다.\n 이곳을 눌러 빨리 구원받으세요.";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _p = new HtmlParse(textBoxInput.Text);
+            username = textBoxInput.Text;
+
+            _p = new HtmlParse(username);
             _p.ParseData();
 
             textTweets.Text = _p.Tweets;
@@ -41,7 +44,7 @@ namespace Where_is_your_life
                 return;
             }
 
-            if (!_j.AddData(_p.Username,
+            if (!_j.AddData(username,
                 int.Parse(_p.Tweets, System.Globalization.NumberStyles.AllowThousands),
                 int.Parse(_p.Followers, System.Globalization.NumberStyles.AllowThousands),
                 int.Parse(_p.Followings, System.Globalization.NumberStyles.AllowThousands))
@@ -52,7 +55,7 @@ namespace Where_is_your_life
             else
             {
                 MessageBox.Show("데이터 추가 성공", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                ListLoad(textBoxInput.Text);
+                ListLoad(username);
             }
         }
 
@@ -60,8 +63,8 @@ namespace Where_is_your_life
         {
             listBox1.Items.Clear();
             listBox2.Items.Clear();
-            (int, int, int, int)[] data = _j.GetData(username);
-            foreach (var a in data)
+            _nowUserdata = _j.GetData(username);
+            foreach (var a in _nowUserdata)
             {
                 listBox1.Items.Add(FormattingDate(a.Item1.ToString()));
                 listBox2.Items.Add(FormattingDate(a.Item1.ToString()));
@@ -88,11 +91,13 @@ namespace Where_is_your_life
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelonListBox1.Text = listBox1.SelectedItem.ToString();
+            ShowTap2Label();
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelonListBox2.Text = listBox2.SelectedItem.ToString();
+            ShowTap2Label();
         }
 
         private void ShowTap2Label()
@@ -103,6 +108,15 @@ namespace Where_is_your_life
                 return;
             }
 
+            labelCTweets.Text =
+                (_j.GetData(username, _nowUserdata[listBox2.SelectedIndex].date).Item1 -
+                 _j.GetData(username, _nowUserdata[listBox1.SelectedIndex].date).Item1).ToString();
+            labelCFers.Text =
+                (_j.GetData(username, _nowUserdata[listBox2.SelectedIndex].date).Item2 -
+                 _j.GetData(username, _nowUserdata[listBox1.SelectedIndex].date).Item2).ToString();
+            labelCFings.Text =
+                (_j.GetData(username, _nowUserdata[listBox2.SelectedIndex].date).Item3 -
+                 _j.GetData(username, _nowUserdata[listBox1.SelectedIndex].date).Item3).ToString();
         }
 
         /// <summary>
@@ -119,6 +133,5 @@ namespace Where_is_your_life
             date = date.Insert(18, "분 ");
             return date;
         }
-        
     }
 }
