@@ -19,6 +19,7 @@ namespace Where_is_your_life
             timer1.Interval = 600;
             timer1.Tick += new EventHandler(timer1_Tick);
             timer1.Start();
+            
 
             _j = new JsonParse();
             label2.Text= "인생이 트위터인 아주 위험한 상황입니다.\n 이곳을 눌러 빨리 구원받으세요.";
@@ -57,6 +58,8 @@ namespace Where_is_your_life
 
         void ListLoad(string username)
         {
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
             (int, int, int, int)[] data = _j.GetData(username);
             foreach (var a in data)
             {
@@ -92,6 +95,16 @@ namespace Where_is_your_life
             labelonListBox2.Text = listBox2.SelectedItem.ToString();
         }
 
+        private void ShowTap2Label()
+        {
+            // 두 리스트 박스 모두 선택 되어 있어야 합니다.
+            if (listBox1.SelectedIndex == -1 || listBox2.SelectedIndex == -1)
+            {
+                return;
+            }
+
+        }
+
         /// <summary>
         /// yyMMddhhss -> yy년 MM월 dd일 hh시 ss분으로 변환합니다.
         /// </summary>
@@ -106,5 +119,6 @@ namespace Where_is_your_life
             date = date.Insert(18, "분 ");
             return date;
         }
+        
     }
 }
