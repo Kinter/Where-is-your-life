@@ -90,7 +90,7 @@ namespace Where_is_your_life
             };
 
             // 분
-            int interval =
+            double interval =
                 ((FormatData[1].year * 24 * 60 * 365) +
                 (FormatData[1].month * 24 * 60 * 30) +
                 (FormatData[1].day * 24 * 60) +
@@ -101,9 +101,12 @@ namespace Where_is_your_life
                 (FormatData[0].day * 24 * 60) +
                 (FormatData[0].hour * 60) +
                 (FormatData[0].minute));
-            
-        }
+            var tweets = Convert.ToDouble(labelCTweets.Text);
 
+            labelTweetPerSeconds.Text = Math.Round((tweets / (interval * 60.0)), 6) + " Tweets/s";
+            labelTweetPerMinutes.Text = Math.Round(tweets / interval, 6) + " Tweets/m";
+            labelTweetPerHour.Text = Math.Round(tweets / (interval / 60.0), 6) + " Tweets/h";
+        }
         void textBoxInput_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) button1_Click(null, null);
