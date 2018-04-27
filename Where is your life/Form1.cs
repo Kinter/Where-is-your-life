@@ -24,6 +24,7 @@ namespace Where_is_your_life
             timer1.Tick += new EventHandler(timer1_Tick);
             timer1.Start();
 
+            labelClear.Visible = false;
 
             _j = new JsonParse();
             label2.Text = "인생이 트위터인 아주 위험한 상황입니다.\n 이곳을 눌러 빨리 구원받으세요.";
@@ -101,11 +102,34 @@ namespace Where_is_your_life
                 (FormatData[0].day * 24 * 60) +
                 (FormatData[0].hour * 60) +
                 (FormatData[0].minute));
-            var tweets = Convert.ToDouble(labelCTweets.Text);
 
-            labelTweetPerSeconds.Text = Math.Round((tweets / (interval * 60.0)), 6) + " Tweets/s";
-            labelTweetPerMinutes.Text = Math.Round(tweets / interval, 6) + " Tweets/m";
-            labelTweetPerHour.Text = Math.Round(tweets / (interval / 60.0), 6) + " Tweets/h";
+            var tweets = Convert.ToDouble(labelCTweets.Text);
+            if (tweets < 0)
+            {
+                IsTweetClear();
+                labelClear.Text = "트청 돌리셨군요";
+            }
+            else if(tweets == 0)
+            {
+                labelClear.Visible = true;
+                labelClear.Text = "작성한 트윗이 0개입니다.";
+            }
+            else
+            {
+                labelClear.Visible = false;
+
+                labelTweetPerSeconds.Text = Math.Round((tweets / (interval * 60.0)), 4) + " Tweets/s";
+                labelTweetPerMinutes.Text = Math.Round(tweets / interval, 4) + " Tweets/m";
+                labelTweetPerHour.Text = Math.Round(tweets / (interval / 60.0), 4) + " Tweets/h";
+                labelTweetPerDay.Text = Math.Round(tweets / (interval / 60.0 / 24.0), 0) + " Tweets/day";
+                labelTweetPerMonth.Text = Math.Round(tweets / (interval / 60.0 / 24.0 / 30.0), 0) + " Tweets/month";
+                labelTweetPerYear.Text = Math.Round(tweets / (interval / 60.0 / 24.0 / 365.0), 0) + " Tweets/year";
+            }
+        }
+
+        void IsTweetClear()
+        {
+            labelClear.Visible = true;
         }
         void textBoxInput_KeyDown(object sender, KeyEventArgs e)
         {

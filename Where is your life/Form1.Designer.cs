@@ -60,6 +60,10 @@
             this.labelTweetPerMinutes = new System.Windows.Forms.Label();
             this.labelTweetPerSeconds = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.labelTweetPerDay = new System.Windows.Forms.Label();
+            this.labelTweetPerMonth = new System.Windows.Forms.Label();
+            this.labelTweetPerYear = new System.Windows.Forms.Label();
+            this.labelClear = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -186,6 +190,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.labelClear);
+            this.tabPage2.Controls.Add(this.labelTweetPerYear);
+            this.tabPage2.Controls.Add(this.labelTweetPerMonth);
+            this.tabPage2.Controls.Add(this.labelTweetPerDay);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.labelTweetPerSeconds);
             this.tabPage2.Controls.Add(this.labelTweetPerMinutes);
@@ -347,33 +355,33 @@
             // 
             // labelTweetPerHour
             // 
-            this.labelTweetPerHour.AutoSize = true;
             this.labelTweetPerHour.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelTweetPerHour.Location = new System.Drawing.Point(427, 160);
+            this.labelTweetPerHour.Location = new System.Drawing.Point(364, 150);
             this.labelTweetPerHour.Name = "labelTweetPerHour";
-            this.labelTweetPerHour.Size = new System.Drawing.Size(112, 14);
+            this.labelTweetPerHour.Size = new System.Drawing.Size(150, 14);
             this.labelTweetPerHour.TabIndex = 15;
             this.labelTweetPerHour.Text = "시간 당 평균 트윗수";
+            this.labelTweetPerHour.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelTweetPerMinutes
             // 
-            this.labelTweetPerMinutes.AutoSize = true;
             this.labelTweetPerMinutes.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelTweetPerMinutes.Location = new System.Drawing.Point(427, 190);
+            this.labelTweetPerMinutes.Location = new System.Drawing.Point(367, 168);
             this.labelTweetPerMinutes.Name = "labelTweetPerMinutes";
-            this.labelTweetPerMinutes.Size = new System.Drawing.Size(100, 14);
+            this.labelTweetPerMinutes.Size = new System.Drawing.Size(147, 14);
             this.labelTweetPerMinutes.TabIndex = 16;
             this.labelTweetPerMinutes.Text = "분당 평균 트윗 수";
+            this.labelTweetPerMinutes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelTweetPerSeconds
             // 
-            this.labelTweetPerSeconds.AutoSize = true;
             this.labelTweetPerSeconds.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelTweetPerSeconds.Location = new System.Drawing.Point(427, 220);
+            this.labelTweetPerSeconds.Location = new System.Drawing.Point(367, 186);
             this.labelTweetPerSeconds.Name = "labelTweetPerSeconds";
-            this.labelTweetPerSeconds.Size = new System.Drawing.Size(100, 14);
+            this.labelTweetPerSeconds.Size = new System.Drawing.Size(147, 14);
             this.labelTweetPerSeconds.TabIndex = 19;
             this.labelTweetPerSeconds.Text = "초당 평균 트윗 수";
+            this.labelTweetPerSeconds.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label12
             // 
@@ -384,6 +392,48 @@
             this.label12.Size = new System.Drawing.Size(86, 23);
             this.label12.TabIndex = 20;
             this.label12.Text = "트윗속도";
+            // 
+            // labelTweetPerDay
+            // 
+            this.labelTweetPerDay.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelTweetPerDay.Location = new System.Drawing.Point(367, 204);
+            this.labelTweetPerDay.Name = "labelTweetPerDay";
+            this.labelTweetPerDay.Size = new System.Drawing.Size(147, 14);
+            this.labelTweetPerDay.TabIndex = 21;
+            this.labelTweetPerDay.Text = "하루 평균 트윗수";
+            this.labelTweetPerDay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelTweetPerMonth
+            // 
+            this.labelTweetPerMonth.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelTweetPerMonth.Location = new System.Drawing.Point(367, 222);
+            this.labelTweetPerMonth.Name = "labelTweetPerMonth";
+            this.labelTweetPerMonth.Size = new System.Drawing.Size(147, 14);
+            this.labelTweetPerMonth.TabIndex = 22;
+            this.labelTweetPerMonth.Text = "월 평균 트윗수";
+            this.labelTweetPerMonth.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelTweetPerYear
+            // 
+            this.labelTweetPerYear.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelTweetPerYear.Location = new System.Drawing.Point(367, 240);
+            this.labelTweetPerYear.Name = "labelTweetPerYear";
+            this.labelTweetPerYear.Size = new System.Drawing.Size(147, 14);
+            this.labelTweetPerYear.TabIndex = 23;
+            this.labelTweetPerYear.Text = "연 평균 트윗수";
+            this.labelTweetPerYear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelClear
+            // 
+            this.labelClear.AutoSize = true;
+            this.labelClear.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelClear.Location = new System.Drawing.Point(32, 156);
+            this.labelClear.Name = "labelClear";
+            this.labelClear.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelClear.Size = new System.Drawing.Size(528, 53);
+            this.labelClear.TabIndex = 24;
+            this.labelClear.Text = "작성한 트윗이 0개입니다.";
+            this.labelClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -440,6 +490,10 @@
         private System.Windows.Forms.Label labelTweetPerSeconds;
         private System.Windows.Forms.Label labelTweetPerMinutes;
         private System.Windows.Forms.Label labelTweetPerHour;
+        private System.Windows.Forms.Label labelTweetPerYear;
+        private System.Windows.Forms.Label labelTweetPerMonth;
+        private System.Windows.Forms.Label labelTweetPerDay;
+        private System.Windows.Forms.Label labelClear;
     }
 }
 
