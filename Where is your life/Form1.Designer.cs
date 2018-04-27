@@ -56,6 +56,10 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labelTweetPerHour = new System.Windows.Forms.Label();
+            this.labelTweetPerMinutes = new System.Windows.Forms.Label();
+            this.labelTweetPerSeconds = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -164,7 +168,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(585, 212);
+            this.tabPage1.Size = new System.Drawing.Size(585, 258);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "현재 상태";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -182,6 +186,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label12);
+            this.tabPage2.Controls.Add(this.labelTweetPerSeconds);
+            this.tabPage2.Controls.Add(this.labelTweetPerMinutes);
+            this.tabPage2.Controls.Add(this.labelTweetPerHour);
             this.tabPage2.Controls.Add(this.labelCFings);
             this.tabPage2.Controls.Add(this.labelhmfw);
             this.tabPage2.Controls.Add(this.labelCFers);
@@ -337,6 +345,46 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // labelTweetPerHour
+            // 
+            this.labelTweetPerHour.AutoSize = true;
+            this.labelTweetPerHour.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelTweetPerHour.Location = new System.Drawing.Point(427, 160);
+            this.labelTweetPerHour.Name = "labelTweetPerHour";
+            this.labelTweetPerHour.Size = new System.Drawing.Size(31, 14);
+            this.labelTweetPerHour.TabIndex = 15;
+            this.labelTweetPerHour.Text = "날짜";
+            // 
+            // labelTweetPerMinutes
+            // 
+            this.labelTweetPerMinutes.AutoSize = true;
+            this.labelTweetPerMinutes.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelTweetPerMinutes.Location = new System.Drawing.Point(427, 190);
+            this.labelTweetPerMinutes.Name = "labelTweetPerMinutes";
+            this.labelTweetPerMinutes.Size = new System.Drawing.Size(31, 14);
+            this.labelTweetPerMinutes.TabIndex = 16;
+            this.labelTweetPerMinutes.Text = "날짜";
+            // 
+            // labelTweetPerSeconds
+            // 
+            this.labelTweetPerSeconds.AutoSize = true;
+            this.labelTweetPerSeconds.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelTweetPerSeconds.Location = new System.Drawing.Point(427, 220);
+            this.labelTweetPerSeconds.Name = "labelTweetPerSeconds";
+            this.labelTweetPerSeconds.Size = new System.Drawing.Size(31, 14);
+            this.labelTweetPerSeconds.TabIndex = 19;
+            this.labelTweetPerSeconds.Text = "날짜";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label12.Location = new System.Drawing.Point(422, 127);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 23);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "트윗속도";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -388,6 +436,10 @@
         private System.Windows.Forms.Label labelhmfr;
         private System.Windows.Forms.Label labelhmt;
         private System.Windows.Forms.Label labelCTweets;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelTweetPerSeconds;
+        private System.Windows.Forms.Label labelTweetPerMinutes;
+        private System.Windows.Forms.Label labelTweetPerHour;
     }
 }
 
