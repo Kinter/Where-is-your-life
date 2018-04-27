@@ -89,16 +89,19 @@ namespace Where_is_your_life
                 (data[1]/100000000, (data[1]/1000000)%100,(data[1]/10000)%100,(data[1]/100)%100,data[1]%100)
             };
 
-            foreach(var a in FormatData)
-            {
-                Console.WriteLine(a.year);
-                Console.WriteLine(a.month);
-                Console.WriteLine(a.day);
-                Console.WriteLine(a.hour);
-                Console.WriteLine(a.minute);
-            }
-
-
+            // 분
+            int interval =
+                ((FormatData[1].year * 24 * 60 * 365) +
+                (FormatData[1].month * 24 * 60 * 30) +
+                (FormatData[1].day * 24 * 60) +
+                (FormatData[1].hour * 60) +
+                (FormatData[1].minute)) -
+                ((FormatData[0].year * 24 * 60 * 365) +
+                (FormatData[0].month * 24 * 60 * 30) +
+                (FormatData[0].day * 24 * 60) +
+                (FormatData[0].hour * 60) +
+                (FormatData[0].minute));
+            
         }
 
         void textBoxInput_KeyDown(object sender, KeyEventArgs e)
