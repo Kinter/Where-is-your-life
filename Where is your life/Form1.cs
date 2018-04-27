@@ -17,7 +17,7 @@ namespace Where_is_your_life
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        void Form1_Load(object sender, EventArgs e)
         {
             timer1 = new Timer();
             timer1.Interval = 600;
@@ -29,7 +29,7 @@ namespace Where_is_your_life
             label2.Text = "인생이 트위터인 아주 위험한 상황입니다.\n 이곳을 눌러 빨리 구원받으세요.";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        void button1_Click(object sender, EventArgs e)
         {
 
             username = textBoxInput.Text.ToLower();
@@ -74,39 +74,50 @@ namespace Where_is_your_life
             }
         }
 
-        private void textBoxInput_KeyDown(object sender, KeyEventArgs e)
+        
+
+        void textBoxInput_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) button1_Click(null, null);
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        void label2_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://kr.battle.net/heroes/ko");
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        void timer1_Tick(object sender, EventArgs e)
         {
             label2.Visible = !label2.Visible;
             timer1.Stop();
             timer1.Start();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelonListBox1.Text = listBox1.SelectedItem.ToString();
             ShowTap2Label();
         }
 
-        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelonListBox2.Text = listBox2.SelectedItem.ToString();
             ShowTap2Label();
         }
 
-        private void ShowTap2Label()
+        bool IsAllListBoxSelected()
+        {
+            if (listBox1.SelectedIndex == -1 || listBox2.SelectedIndex == -1)
+            {
+                return false;
+            }
+            else return true;
+        }
+
+        void ShowTap2Label()
         {
             // 두 리스트 박스 모두 선택 되어 있어야 합니다.
-            if (listBox1.SelectedIndex == -1 || listBox2.SelectedIndex == -1)
+            if (!IsAllListBoxSelected())
             {
                 return;
             }
@@ -127,7 +138,7 @@ namespace Where_is_your_life
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
-        private string FormattingDate(string date)
+        string FormattingDate(string date)
         {
             date = date.Insert(2, "년 ");
             date = date.Insert(6, "월 ");
