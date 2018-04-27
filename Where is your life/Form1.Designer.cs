@@ -174,7 +174,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(585, 258);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "현재 상태";
+            this.tabPage1.Text = "총 기록";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // label2
