@@ -351,9 +351,9 @@
             this.labelTweetPerHour.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.labelTweetPerHour.Location = new System.Drawing.Point(427, 160);
             this.labelTweetPerHour.Name = "labelTweetPerHour";
-            this.labelTweetPerHour.Size = new System.Drawing.Size(31, 14);
+            this.labelTweetPerHour.Size = new System.Drawing.Size(112, 14);
             this.labelTweetPerHour.TabIndex = 15;
-            this.labelTweetPerHour.Text = "날짜";
+            this.labelTweetPerHour.Text = "시간 당 평균 트윗수";
             // 
             // labelTweetPerMinutes
             // 
@@ -361,9 +361,9 @@
             this.labelTweetPerMinutes.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.labelTweetPerMinutes.Location = new System.Drawing.Point(427, 190);
             this.labelTweetPerMinutes.Name = "labelTweetPerMinutes";
-            this.labelTweetPerMinutes.Size = new System.Drawing.Size(31, 14);
+            this.labelTweetPerMinutes.Size = new System.Drawing.Size(100, 14);
             this.labelTweetPerMinutes.TabIndex = 16;
-            this.labelTweetPerMinutes.Text = "날짜";
+            this.labelTweetPerMinutes.Text = "분당 평균 트윗 수";
             // 
             // labelTweetPerSeconds
             // 
@@ -371,9 +371,9 @@
             this.labelTweetPerSeconds.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.labelTweetPerSeconds.Location = new System.Drawing.Point(427, 220);
             this.labelTweetPerSeconds.Name = "labelTweetPerSeconds";
-            this.labelTweetPerSeconds.Size = new System.Drawing.Size(31, 14);
+            this.labelTweetPerSeconds.Size = new System.Drawing.Size(100, 14);
             this.labelTweetPerSeconds.TabIndex = 19;
-            this.labelTweetPerSeconds.Text = "날짜";
+            this.labelTweetPerSeconds.Text = "초당 평균 트윗 수";
             // 
             // label12
             // 
