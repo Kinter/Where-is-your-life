@@ -356,7 +356,7 @@
             // labelTweetPerHour
             // 
             this.labelTweetPerHour.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelTweetPerHour.Location = new System.Drawing.Point(364, 150);
+            this.labelTweetPerHour.Location = new System.Drawing.Point(428, 150);
             this.labelTweetPerHour.Name = "labelTweetPerHour";
             this.labelTweetPerHour.Size = new System.Drawing.Size(150, 14);
             this.labelTweetPerHour.TabIndex = 15;
@@ -366,7 +366,7 @@
             // labelTweetPerMinutes
             // 
             this.labelTweetPerMinutes.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelTweetPerMinutes.Location = new System.Drawing.Point(367, 168);
+            this.labelTweetPerMinutes.Location = new System.Drawing.Point(431, 168);
             this.labelTweetPerMinutes.Name = "labelTweetPerMinutes";
             this.labelTweetPerMinutes.Size = new System.Drawing.Size(147, 14);
             this.labelTweetPerMinutes.TabIndex = 16;
@@ -376,7 +376,7 @@
             // labelTweetPerSeconds
             // 
             this.labelTweetPerSeconds.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelTweetPerSeconds.Location = new System.Drawing.Point(367, 186);
+            this.labelTweetPerSeconds.Location = new System.Drawing.Point(431, 186);
             this.labelTweetPerSeconds.Name = "labelTweetPerSeconds";
             this.labelTweetPerSeconds.Size = new System.Drawing.Size(147, 14);
             this.labelTweetPerSeconds.TabIndex = 19;
@@ -387,7 +387,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("나눔스퀘어라운드 Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.Location = new System.Drawing.Point(422, 127);
+            this.label12.Location = new System.Drawing.Point(486, 127);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(86, 23);
             this.label12.TabIndex = 20;
@@ -396,7 +396,7 @@
             // labelTweetPerDay
             // 
             this.labelTweetPerDay.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelTweetPerDay.Location = new System.Drawing.Point(367, 204);
+            this.labelTweetPerDay.Location = new System.Drawing.Point(431, 204);
             this.labelTweetPerDay.Name = "labelTweetPerDay";
             this.labelTweetPerDay.Size = new System.Drawing.Size(147, 14);
             this.labelTweetPerDay.TabIndex = 21;
@@ -406,7 +406,7 @@
             // labelTweetPerMonth
             // 
             this.labelTweetPerMonth.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelTweetPerMonth.Location = new System.Drawing.Point(367, 222);
+            this.labelTweetPerMonth.Location = new System.Drawing.Point(431, 222);
             this.labelTweetPerMonth.Name = "labelTweetPerMonth";
             this.labelTweetPerMonth.Size = new System.Drawing.Size(147, 14);
             this.labelTweetPerMonth.TabIndex = 22;
@@ -416,7 +416,7 @@
             // labelTweetPerYear
             // 
             this.labelTweetPerYear.Font = new System.Drawing.Font("나눔스퀘어", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelTweetPerYear.Location = new System.Drawing.Point(367, 240);
+            this.labelTweetPerYear.Location = new System.Drawing.Point(431, 240);
             this.labelTweetPerYear.Name = "labelTweetPerYear";
             this.labelTweetPerYear.Size = new System.Drawing.Size(147, 14);
             this.labelTweetPerYear.TabIndex = 23;
