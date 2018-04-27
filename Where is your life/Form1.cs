@@ -74,7 +74,13 @@ namespace Where_is_your_life
             }
         }
 
-        
+        void CalculateTweetSpeed()
+        {
+            if(!IsAllListBoxSelected())
+            {
+                return;
+            }
+        }
 
         void textBoxInput_KeyDown(object sender, KeyEventArgs e)
         {
@@ -97,12 +103,14 @@ namespace Where_is_your_life
         {
             labelonListBox1.Text = listBox1.SelectedItem.ToString();
             ShowTap2Label();
+            CalculateTweetSpeed();
         }
 
         void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelonListBox2.Text = listBox2.SelectedItem.ToString();
             ShowTap2Label();
+            CalculateTweetSpeed();
         }
 
         bool IsAllListBoxSelected()
