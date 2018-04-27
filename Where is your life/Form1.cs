@@ -76,10 +76,29 @@ namespace Where_is_your_life
 
         void CalculateTweetSpeed()
         {
-            if(!IsAllListBoxSelected())
+            if (!IsAllListBoxSelected())
             {
                 return;
             }
+
+            var data = new int[] { _nowUserdata[listBox1.SelectedIndex].date, _nowUserdata[listBox2.SelectedIndex].date };
+
+            var FormatData = new(int year, int month, int day, int hour, int minute)[]
+            {
+                (data[0]/100000000, (data[0]/1000000)%100,(data[0]/10000)%100,(data[0]/100)%100,data[0]%100),
+                (data[1]/100000000, (data[1]/1000000)%100,(data[1]/10000)%100,(data[1]/100)%100,data[1]%100)
+            };
+
+            foreach(var a in FormatData)
+            {
+                Console.WriteLine(a.year);
+                Console.WriteLine(a.month);
+                Console.WriteLine(a.day);
+                Console.WriteLine(a.hour);
+                Console.WriteLine(a.minute);
+            }
+
+
         }
 
         void textBoxInput_KeyDown(object sender, KeyEventArgs e)
