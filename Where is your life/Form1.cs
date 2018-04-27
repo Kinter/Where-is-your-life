@@ -7,6 +7,8 @@ namespace Where_is_your_life
     {
         HtmlParse _p;
         JsonParse _j;
+
+        // 현재 입력되어 수집중인 유저의 데이터
         (int date, int tweets, int followers, int followings)[] _nowUserdata;
         string username;
 
@@ -29,7 +31,8 @@ namespace Where_is_your_life
 
         private void button1_Click(object sender, EventArgs e)
         {
-            username = textBoxInput.Text;
+
+            username = textBoxInput.Text.ToLower();
 
             _p = new HtmlParse(username);
             _p.ParseData();
