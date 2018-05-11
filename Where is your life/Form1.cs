@@ -204,5 +204,10 @@ namespace Where_is_your_life
             date = date.Insert(18, "분 ");
             return date;
         }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
