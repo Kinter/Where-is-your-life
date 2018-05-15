@@ -37,7 +37,6 @@ namespace Where_is_your_life
                 if (File.Exists(Application.StartupPath + @"\ParseData.json"))
                 {
                     // 파일이 존재하면 불러옴
-
                     return JObject.Parse(File.ReadAllText(Application.StartupPath + @"\ParseData.json"));
                 }
                 else
